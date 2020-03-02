@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OCR小图校对</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free HTML5 Website Template by sc.chinaz.com" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="sc.chinaz.com" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/button.css">
+    <style>
+      .file {
+          position: relative;
+          display: inline-block;
+          background: #D0EEFF;
+          border: 1px solid #99D3F5;
+          border-radius: 4px;
+          padding: 4px 12px;
+          overflow: hidden;
+          color: #1E88C7;
+          text-decoration: none;
+          text-indent: 0;
+          line-height: 20px;
+      }
+      .file input {
+          position: absolute;
+          font-size: 100px;
+          right: 0;
+          top: 0;
+          opacity: 0;
+      }
+      .file:hover {
+          background: #AADFFD;
+          border-color: #78C3F3;
+          color: #004974;
+          text-decoration: none;
+      }
+      .img_item {
+        float:left;
+      }
+      .page{
+        width: 50px;
+        height: 20px;
+      }
+      #loading
+      {
+        position:fixed;
+        top:40%;
+        left:50%;
+        z-index:999;
+        width:100%;
+        height:100%;
+      }
+
+      .tab_show{
+        font-size: 20px;
+        width: 100%;
+        border: 15px;
+      }
+      .row_id{
+        width: 3%;
+      }
+      .tab_text{
+        align-self: right;
+      }
+      .td_left{
+        vertical-align: middle;
+        text-align: left;
+        width: 63%;
+      }
+      .td_right{
+        width: 30%;
+        text-align: center;
+      }
+      th {
+        vertical-align:top;
+        padding-left:10px;
+      }
+
+      table {
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 10px;
+        border-color: brown;
+      }
+      #show_pdf {
+        height: 400px;
+      }
+      #pad-left{
+        padding-left: 30px;
+      }
+      .text_mod{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body style="font-size:12px">
+    <div id="loading">
+        <img src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124233131.gif" class="img-responsive">
+    </div>
+    <div id="background" class="background" style="display: none; "></div> 
+    <div id="progressBar" class="progressBar" style="display: none; ">
+      <img src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124233131.gif" width="300px" height="200px"></img>
+    </div> 
+    <aside class="probootstrap-aside js-probootstrap-aside">
+      <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
+      <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+        <a href="index.html" class="mb-2 d-block probootstrap-logo">OCR小图校对</a>
+      </div>
+      <div class="probootstrap-overflow" id="pad-left">
+        <nav class="probootstrap-nav">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-xl-12 col-lg-12">
+                <div class="row">
+                  <div class="col-xl-12 col-lg-12 mx-auto">
+                    <!-- <form enctype="multipart/form-data" method="post" action=""> -->
+                    <form  method="post" action="">  
+                      <table>  
+                        <tr><td></td><td><a href="javascript:;" class="file"><input type="file" id="oFile" name="myfile" onchange="FileChangeFn(event)"/>upload</a></td></tr>  
+                        <tr><td></td><td><a href="javascript:void(0);" class="file" onclick="showAlljpg()">显示所有小图</a></td></tr> 
+                        <tr><td></td><td>语言：</td></tr>
+                          <tr><td></td><td><select type="text" name="language" id="language"><option value="ENG">纯英</option><option value="CHE">中-英</option><option value="JPE">日-英</option></select></td></tr>
+                        <tr><td></td><td>check label：</td></tr>
+			  <tr><td></td><td><select type="boolean" name="checkLabel" id="checkLabel"><option value="False">False</option><option value="True">True</option></select></td></tr>
+		        <tr><td></td><td>TXT：</td></tr>
+                          <tr><td></td><td><select type="boolean" name="txtlabel" id="txtlabel"><option value="False">False</option><option value="True">True</option></select></td></tr>
+                      </table>  
+                    </form>	
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
+        </footer>
+      </div>
+    </aside>
+
+    <main role="main" class="probootstrap-main js-probootstrap-main">
+    <!-- END row -->
+      <section class="">
+            <div class="container-fluid" id="pad-left">
+              <div class="row mb-5 justify-content-center">
+                <div class="img_item col-md-6" id="file_box" > </div>
+                <div class="img_item col-md-6" id="res_box" > </div>
+              </div>
+              <div class="row mb-6">
+                <div class="col-md-11" id="all_page"></div>
+                
+                
+              </div> 
+              <div>
+                <iframe hidden id="exec_target" name="exec_target"></iframe>
+              </div>
+              <!-- <div><form class="form" method="post" action="" target="exec_target">
+                <table  id="'+row_key+ '"><tr><td><span>1</span></td>
+                  <td><img class="photo" width="100%" alt="我是image图片文件" src= title=""/></td>
+                  <td><ul><li>text</li><li><input class="text" type="text" value=></li></ul></td>
+                  <td><input type="submit" value=保存 onclick="savetext()"/></td></tr></table></form></div> -->
+            </div>
+      </section>
+      <!-- END section -->
+      <div class="container-fluid d-md-none">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+      
+
+    <!--<script src="js/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="upload.js"></script>
+    <!-- <script src="localJson.js"></script> -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <script src="js/main.js"></script>
+      
+    <script type='text/javascript'>
+      $('#item1').html('');
+      $('#item2').html('');
+      $('#loading').hide();
+    </script>
+    
+  </body>
+</html>

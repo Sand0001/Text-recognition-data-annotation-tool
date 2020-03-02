@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free HTML5 Website Template by sc.chinaz.com" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="sc.chinaz.com" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
+
+  </head>
+  <body>
+    <div id="background" class="background" style="display: none; "></div> 
+    <div id="progressBar" class="progressBar" style="display: none; ">数据加载中，请稍等...</div> 
+    <aside class="probootstrap-aside js-probootstrap-aside">
+      <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
+      <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+        
+        <a href="index.html" class="mb-2 d-block probootstrap-logo">PPTX</a>
+        <p class="mb-0"> check the difference of two pptx <a href="https://sc.chinaz.com/" target="_blank"></a></p>
+      </div>
+      <div class="probootstrap-overflow">
+        <nav class="probootstrap-nav">
+          <ul>
+            <li class="probootstrap-animate active" data-animate-effect="fadeInLeft"><a href="about.php">PPTX DIff Checker</a></li>
+                 
+            <li class="probootstrap-animate active" data-animate-effect="fadeInLeft">
+				 <form method="post" action="">  
+					<button type="button" class="send_btn2" onclick="analysze()">开始分析</button> 
+				  </form>
+		</li>
+          </ul>
+        </nav>
+        <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
+            <p>Copyright &copy; 2018.Company name All rights reserved.</p>
+		<p>	<a target="_blank" href="#">深度智耀</a></p>
+        </footer>
+      </div>
+    </aside>
+
+    <main role="main" class="probootstrap-main js-probootstrap-main">
+      <div class="probootstrap-bar">
+        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
+        <div class="probootstrap-main-site-logo"><a href="index.html">Aside</a></a></div>
+      </div>
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-lg-12">
+            
+            <div class="row">
+              <div class="col-xl-8 col-lg-12 mx-auto">
+                <h3 class="mb-3">提交文档</h3>
+              </div class="col-xl-8 col-lg-12 mx-auto">
+			  <div>
+                  <form enctype="multipart/form-data" method="post" action="">  
+					<table>  
+						<tr><td>请选择文件：</td><td><input type="file" id="oFile" name="myfile" onchange="FileChangeFn(event)"/></td></tr>  
+						   <tr> <label id="file_size"></label></tr> 
+							<tr><div id="file_box"></div></tr> 
+							<tr><div class="speed_box">
+								<div id="speed">0%</div>
+							</div></tr> 
+							<tr><label id="file_type"></label></tr> 
+						<tr><td></td><td><button type="button" class="send_btn" onclick="UploadFileFn()">开始上传文件</button></td></tr>  
+					</table>  
+				  </form>
+				  <form enctype="multipart/form-data" method="post" action="">  
+					<table>  
+						<tr><td>请选择文件：</td><td><input type="file" id="oFile2" name="myfile2" onchange="FileChangeFn2(event)"/></td></tr>  
+						   <tr> <label id="file_size2"></label></tr> 
+							<tr><div id="file_box2"></div></tr> 
+							<tr><div class="speed_box2">
+								<div id="speed2">0%</div>
+							</div></tr> 
+							<tr><label id="file_type2"></label></tr> 
+						<tr><td></td><td><button type="button" class="send_btn2" onclick="UploadFileFn2()">开始上传文件</button></td></tr>  
+					</table>  
+				  </form>
+
+				</div>	
+            </div>
+
+            <div>
+                  
+				</div>	
+            </div>
+            
+          </div>
+        </div>
+        <!-- END row -->
+        <section class="probootstrap-section">
+          <div class="container-fluid">
+            <div class="row mb-5 justify-content-center">
+              <div class="col-md-8">
+                <div class="row">
+                 
+                </div>
+                
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-md-12">
+                
+                  <div class="item" id="item1">
+                    <img src="slides/slide.png" class="img-fluid" alt="">
+                   
+                  </div>
+                  <div class="item" id="item2">
+                    <img src="slides/slide2.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="item" id="item3">
+                  </div>
+                  <div class="item" id="item4">
+                  </div>
+                  <div class="item" id="item5">
+                  </div>
+                  <div class="item" id="item6">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            
+          </div>
+        </section>
+        <!-- END section -->
+
+      </div>
+
+      <div class="container-fluid d-md-none">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http:///">深度智耀</a></p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    
+
+    <!--<script src="js/jquery-3.2.1.slim.min.js"></script> -->
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="upload.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <script src="js/main.js"></script>
+    
+   <script type='text/javascript'>
+   $('#item1').html('');
+   $('#item2').html('');
+	</script>
+    
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"url_file": "/Users/zhao/Downloads/train_9", "url_img": ["Invention%202017%20Revised_3.jpg", "IQACReport2012-13_44.jpg", "INVITACION-A-CONTRATAR-008-2014_2.jpg", "Invitation%20to%20bid%20-%20IT%20Tender%202017-006%20-%20V5_30.jpg", "IQACReport2012-13_47.jpg", "intrumentos_de_evaluacion_3.jpg"]}

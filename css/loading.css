@@ -1,0 +1,35 @@
+.background { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    opacity: 0.4; 
+    filter: alpha(opacity=40); 
+    background:black; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 2000; 
+} 
+.progressBar { 
+    //border: solid 2px #86A5AD; 
+    //background: white url(/office/loading.gif) no-repeat 200px 200px; 
+} 
+.progressBar { 
+    display: block; 
+    width: 160px; 
+    height: 28px; 
+    position: fixed; 
+    top: 35%; 
+    left: 40%; 
+    margin-left: -74px; 
+    margin-top: -14px; 
+    padding: 10px 10px 10px 50px; 
+    text-align: left; 
+    line-height: 27px; 
+    font-weight: bold; 
+    position: absolute; 
+    z-index: 2001; 
+} 
+.img_item{ 
+	margin-top:10px;
+ }

@@ -1,0 +1,115 @@
+﻿<html>
+<head>
+
+	<style >
+	h1 {
+	text-align:center;
+}
+form {
+	width:600px;
+	margin:auto;
+	padding:20px 50px;
+	border:1px solid #0091f2;
+	border-radius:10px;
+	display:block;
+}
+input {
+	font-size:24px;
+	margin:10px;
+}
+.clear {
+	clear:both;
+}
+.speed_box {
+	width:600px;
+	height:20px;
+	display:none;
+	border:1px solid #0091f2;
+	border-radius:10px;
+	overflow:hidden;
+}
+#file_box {
+	min-width:600px;
+	min-height:300px;
+	border:1px solid #0091f2;
+	border-radius:10px;
+	display:inline-block;
+	background:#EEE;
+	overflow:hidden;
+	z-index:999999;
+}
+#speed {
+	width:0;
+	height:100%;
+	background:#0091f2;
+	color:white;
+	text-align:center;
+	line-height:20px;
+	font-size:16px;
+}
+#file_size,#file_type {
+	display:inline-block;
+	padding:0px 16px;
+	font-size:16px;
+	color:#0091f2;
+	font-weight:bold;
+}
+#file_type {
+	margin-top:30px;
+}
+.opts_btn {
+	position:relative;
+	display:inline-block;
+	padding:8px 16px;
+	font-size:16px;
+	color:white;
+	text-decoration:none;
+	background:#0091f2;
+	border:2px solid #0091f2;
+	border-radius:3px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.oFile {
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:10;
+	top:0px;
+	left:0px;
+	opacity:0;
+}
+.send_btn {
+	display:inline-block;
+	display:none;
+	float:right;
+	margin-top:20px;
+	padding:8px 16px;
+	font-size:16px;
+	color:white;
+	background:#0091f2;
+	border:1px solid transparent;
+	border-radius:2px;
+	cursor:pointer;
+}	
+	</style>
+	<script src="upload.js"></script>
+	<script src="jquery-3.3.1.min.js"></script>
+</head>
+<h1>文件上传 带 进度条 $ajax</h1>
+<hr>
+<form action="" method="" enctype="multipart/form-data">
+    <a class="opts_btn" href="JavaScript:void(0)">
+        <label id="opst_txt">选择上传文件</label><input type="file" id="oFile" class="oFile" name="UploadForm[image]" onchange="FileChangeFn(event)">
+    </a>
+    <label id="file_size"></label><br><br>
+    <div id="file_box"></div>
+    <div class="speed_box">
+        <div id="speed">0%</div>
+    </div>
+    <label id="file_type"></label>
+    <button type="button" class="send_btn" onclick="UploadFileFn()">开始上传文件</button>
+    <div class="clear"></div>
+</form>
+
+</html>
